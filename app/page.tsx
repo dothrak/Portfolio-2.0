@@ -30,7 +30,7 @@ interface Project {
   status: "in progress" | "done";
 }
 
-export default function Page(): JSX.Element {
+export default function Page() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
 
   useEffect(() => {
