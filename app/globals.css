@@ -1,26 +1,40 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Palette de couleurs personnalisées pour ton thème clair/sombre */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --pink-50: #fff5f7;
+  --pink-100: #ffd1e6;
+  --pink-300: #ff66b2;
+  --pink-500: #ff2d9c;
+  --pink-900: #7a0236;
+
+  --background-light: #ffffff;
+  --foreground-light: #171717;
+
+  --background-dark: #0a0a0a;
+  --foreground-dark: #ededed;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Styles globaux */
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-light);
+  color: var(--foreground-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Mode sombre */
+.dark body {
+  background-color: var(--background-dark);
+  color: var(--foreground-dark);
+}
+
+/* Exemple de pink accent en dark mode */
+.dark .bg-pink-50 {
+  background-color: rgba(255, 45, 156, 0.06);
+}
+.dark .ring-pink-100 {
+  box-shadow: 0 0 0 4px rgba(255, 45, 156, 0.08);
 }
