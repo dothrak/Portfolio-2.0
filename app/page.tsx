@@ -211,22 +211,25 @@ export default function Page() {
             <section id="about" className="py-12 border-t border-slate-100 dark:border-slate-800">
               <h3 className="text-2xl font-semibold mb-8 text-center">Journey</h3>
 
-              <div className="relative flex items-start justify-between">
-                {/* Line */}
+              <div className="relative">
+                {/* Ligne horizontale */}
                 <div className="absolute top-5 left-0 right-0 h-0.5 bg-pink-300 dark:bg-pink-600"></div>
 
-                {timeline.map((step, i) => (
-                  <div key={i} className="flex flex-col items-center relative z-10 text-center w-40">
-                    {/* Point */}
-                    <span className="w-4 h-4 rounded-full bg-pink-500 dark:bg-pink-400 border-2 border-white dark:border-gray-900 mb-2"></span>
-                    {/* Date */}
-                    <p className="text-sm text-slate-500 dark:text-slate-400 mb-1">{step.period}</p>
-                    {/* Title */}
-                    <h4 className="text-base font-semibold">{step.title}</h4>
-                    {/* Description */}
-                    <p className="text-slate-700 dark:text-slate-300 text-sm mt-1">{step.desc}</p>
-                  </div>
-                ))}
+                {/* Conteneur scrollable */}
+                <div className="flex gap-4 overflow-x-auto pb-4 px-2">
+                  {timeline.map((step, i) => (
+                    <div key={i} className="flex-shrink-0 flex flex-col items-center relative z-10 text-center w-40">
+                      {/* Point */}
+                      <span className="w-4 h-4 rounded-full bg-pink-500 dark:bg-pink-400 border-2 border-white dark:border-gray-900 mb-2"></span>
+                      {/* Date */}
+                      <p className="text-sm text-slate-500 dark:text-slate-400 mb-1">{step.period}</p>
+                      {/* Title */}
+                      <h4 className="text-base font-semibold">{step.title}</h4>
+                      {/* Description */}
+                      <p className="text-slate-700 dark:text-slate-300 text-sm mt-1">{step.desc}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               {/* Caption */}
