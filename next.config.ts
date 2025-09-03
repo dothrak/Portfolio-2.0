@@ -1,14 +1,11 @@
-import type { NextConfig } from "next";
-import path from "path";
+const isProd = process.env.NODE_ENV === "production";
 
-const nextConfig: NextConfig = {
-  output: "export",
+const nextConfig = {
+  output: 'export',
+  distDir: 'dist',
   images: {
     unoptimized: true,
   },
-  basePath: "",
-  assetPrefix: "",
-  turbopack: { root: path.resolve(__dirname) },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
