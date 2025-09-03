@@ -197,7 +197,7 @@ export default function Page() {
               <div className="flex justify-center md:justify-end">
                 <div className="w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden shadow-2xl ring-4 ring-pink-100 dark:ring-pink-900">
                   <Image
-                    src="/Portfolio-2.0/pp.jpg"
+                    src="/pp.jpg"
                     alt="Portrait"
                     width={224}
                     height={224}
