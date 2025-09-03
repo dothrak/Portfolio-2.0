@@ -5,7 +5,7 @@
 const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig = {
-  assetPrefix: '.',
+  basePath: isProd ? "/myriamouraou.com" : "",
   output: 'export',
   distDir: 'dist',
   images: {
